@@ -1,0 +1,67 @@
+-----> Starting Kitchen (v1.17.0)
+-----> Cleaning up any prior instances of <default-sbeliakou-centos-73-x86-64-minimal>
+-----> Destroying <default-sbeliakou-centos-73-x86-64-minimal>...
+       Finished destroying <default-sbeliakou-centos-73-x86-64-minimal> (0m0.00s).
+-----> Testing <default-sbeliakou-centos-73-x86-64-minimal>
+-----> Creating <default-sbeliakou-centos-73-x86-64-minimal>...
+       Bringing machine 'default' up with 'virtualbox' provider...
+       ==> default: Checking if box 'sbeliakou/centos-7.3-x86_64-minimal' is up to date...
+       ==> default: Machine not provisioned because `--no-provision` is specified.
+       [SSH] Established
+       Vagrant instance <default-sbeliakou-centos-73-x86-64-minimal> created.
+       Finished creating <default-sbeliakou-centos-73-x86-64-minimal> (0m6.40s).
+-----> Converging <default-sbeliakou-centos-73-x86-64-minimal>...
+       Preparing files for transfer
+       Preparing dna.json
+       Resolving cookbook dependencies with Berkshelf 6.3.0...
+       Removing non-cookbook files before transfer
+       Preparing validation.pem
+       Preparing client.rb
+-----> Chef Omnibus installation detected (13.3.42)
+       Transferring files to <default-sbeliakou-centos-73-x86-64-minimal>
+       Starting Chef Client, version 13.3.42
+       resolving cookbooks for run list: ["vim::default", "netstat::default"]
+       Synchronizing Cookbooks:
+         - vim (2.0.2)
+         - netstat (0.2.0)
+       Installing Cookbook Gems:
+       Compiling Cookbooks...
+       Converging 3 resources
+       Recipe: vim::package
+         * yum_package[vim-minimal, vim-enhanced] action install (up to date)
+         * yum_package[] action install (up to date)
+       Recipe: netstat::default
+         * yum_package[net-tools] action install (up to date)
+       
+       Running handlers:
+       Running handlers complete
+       Chef Client finished, 0/3 resources updated in 05 seconds
+       Finished converging <default-sbeliakou-centos-73-x86-64-minimal> (0m10.63s).
+-----> Setting up <default-sbeliakou-centos-73-x86-64-minimal>...
+       Finished setting up <default-sbeliakou-centos-73-x86-64-minimal> (0m0.00s).
+-----> Verifying <default-sbeliakou-centos-73-x86-64-minimal>...
+       Loaded tests from test/smoke/default 
+
+Profile: tests from test/smoke/default
+Version: (not specified)
+Target:  ssh://vagrant@127.0.0.1:2200
+
+
+  User root
+[38;5;41m     ✔  should exist[0m
+  Port 80
+[38;5;41m     ✔  should not be listening[0m
+  System Package
+[38;5;41m     ✔  vim-enhanced should be installed[0m
+  System Package
+[38;5;41m     ✔  net-tools should be installed[0m
+
+Test Summary: [38;5;41m4 successful[0m, [38;5;9m0 failures[0m, [38;5;247m0 skipped[0m
+       Finished verifying <default-sbeliakou-centos-73-x86-64-minimal> (0m2.94s).
+-----> Destroying <default-sbeliakou-centos-73-x86-64-minimal>...
+       ==> default: Forcing shutdown of VM...
+       ==> default: Destroying VM and associated drives...
+       Vagrant instance <default-sbeliakou-centos-73-x86-64-minimal> destroyed.
+       Finished destroying <default-sbeliakou-centos-73-x86-64-minimal> (0m4.18s).
+       Finished testing <default-sbeliakou-centos-73-x86-64-minimal> (0m24.15s).
+-----> Kitchen is finished. (0m25.50s)
